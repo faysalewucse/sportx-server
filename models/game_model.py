@@ -2,12 +2,7 @@ from typing import List, Union, Optional
 from pydantic import BaseModel
 
 
-class ObjectId(BaseModel):
-    oid: str
-
-
-class GameData(BaseModel):
-    _id: ObjectId
+class Game(BaseModel):
     chart_type: str
     gid: str
     game_time: str
@@ -38,6 +33,3 @@ class GameData(BaseModel):
     Cy_rank_overall: Optional[int] = None
     sctr_arr: List[Union[str, int]]
 
-
-class GameResponse(BaseModel):
-    game_data: GameData
